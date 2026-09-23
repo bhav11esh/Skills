@@ -1,0 +1,7 @@
+# Attribution for scripts adapted from TrueFoundry Skills Registry
+#
+# Upstream: https://github.com/truefoundry/tfy-skills-repo
+# License: Apache License 2.0 (see UPSTREAM_LICENSE.txt if present)
+#
+# This directory contains adapted tooling to scan GitHub repos for SKILL.md
+# files and build a local catalog with full skill bodies for offline copy.

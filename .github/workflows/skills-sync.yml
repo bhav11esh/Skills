@@ -1,0 +1,61 @@
+name: Skills catalog sync
+
+# Keeps the skills catalog fresh the same way TrueFoundry does:
+# scan sources → fetch SKILL.md bodies → commit index + static bodies.
+on:
+  schedule:
+    # Mondays 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - "scripts/skills/sources.yaml"
+      - "scripts/skills/build_catalog.py"
+      - "scripts/skills/requirements.txt"
+      - ".github/workflows/skills-sync.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: skills-catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-skills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Needed so the bot can push commits back to this repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r scripts/skills/requirements.txt
+
+      - name: Build skills catalog (with bodies)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/skills/build_catalog.py --keep-existing-bodies --workers 12
+
+      - name: Commit & push if catalog changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/skills-index.json src/data/skills-meta.json static/skills-data
+          if git diff --staged --quiet; then
+            echo "No catalog changes"
+            exit 0
+          fi
+          git commit -m "chore(skills): refresh skills catalog"
+          git push

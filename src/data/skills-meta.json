@@ -1,0 +1,541 @@
+{
+  "total": 1023,
+  "with_body": 968,
+  "official": 91,
+  "categories": [
+    {
+      "id": "marketing",
+      "slug": "marketing",
+      "count": 248
+    },
+    {
+      "id": "coding",
+      "slug": "coding",
+      "count": 208
+    },
+    {
+      "id": "productivity",
+      "slug": "productivity",
+      "count": 138
+    },
+    {
+      "id": "science",
+      "slug": "science",
+      "count": 129
+    },
+    {
+      "id": "design",
+      "slug": "design",
+      "count": 67
+    },
+    {
+      "id": "data-ai",
+      "slug": "data-ai",
+      "count": 66
+    },
+    {
+      "id": "creative",
+      "slug": "creative",
+      "count": 58
+    },
+    {
+      "id": "business",
+      "slug": "business",
+      "count": 46
+    },
+    {
+      "id": "legal",
+      "slug": "legal",
+      "count": 30
+    },
+    {
+      "id": "health",
+      "slug": "health",
+      "count": 22
+    },
+    {
+      "id": "miscellaneous",
+      "slug": "miscellaneous",
+      "count": 11
+    }
+  ],
+  "companies": [
+    {
+      "id": "anthropics",
+      "name": "anthropics",
+      "count": 17,
+      "stars": 149805,
+      "official": 17
+    },
+    {
+      "id": "mattpocock",
+      "name": "mattpocock",
+      "count": 29,
+      "stars": 126573,
+      "official": 0
+    },
+    {
+      "id": "Leonxlnx",
+      "name": "Leonxlnx",
+      "count": 13,
+      "stars": 42062,
+      "official": 0
+    },
+    {
+      "id": "coreyhaines31",
+      "name": "coreyhaines31",
+      "count": 43,
+      "stars": 33005,
+      "official": 0
+    },
+    {
+      "id": "K-Dense-AI",
+      "name": "K-Dense-AI",
+      "count": 143,
+      "stars": 28042,
+      "official": 0
+    },
+    {
+      "id": "vercel-labs",
+      "name": "vercel-labs",
+      "count": 9,
+      "stars": 27842,
+      "official": 9
+    },
+    {
+      "id": "blader",
+      "name": "blader",
+      "count": 1,
+      "stars": 23869,
+      "official": 0
+    },
+    {
+      "id": "garrytan",
+      "name": "garrytan",
+      "count": 51,
+      "stars": 22403,
+      "official": 0
+    },
+    {
+      "id": "zarazhangrui",
+      "name": "zarazhangrui",
+      "count": 1,
+      "stars": 21383,
+      "official": 0
+    },
+    {
+      "id": "huggingface",
+      "name": "huggingface",
+      "count": 17,
+      "stars": 10656,
+      "official": 17
+    },
+    {
+      "id": "kreuzberg-dev",
+      "name": "kreuzberg-dev",
+      "count": 1,
+      "stars": 8483,
+      "official": 1
+    },
+    {
+      "id": "PleasePrompto",
+      "name": "PleasePrompto",
+      "count": 1,
+      "stars": 6999,
+      "official": 0
+    },
+    {
+      "id": "czlonkowski",
+      "name": "czlonkowski",
+      "count": 7,
+      "stars": 5393,
+      "official": 0
+    },
+    {
+      "id": "deanpeters",
+      "name": "deanpeters",
+      "count": 49,
+      "stars": 5080,
+      "official": 0
+    },
+    {
+      "id": "tech-leads-club",
+      "name": "tech-leads-club",
+      "count": 80,
+      "stars": 4578,
+      "official": 0
+    },
+    {
+      "id": "op7418",
+      "name": "op7418",
+      "count": 2,
+      "stars": 2964,
+      "official": 0
+    },
+    {
+      "id": "lackeyjb",
+      "name": "lackeyjb",
+      "count": 1,
+      "stars": 2758,
+      "official": 0
+    },
+    {
+      "id": "ibelick",
+      "name": "ibelick",
+      "count": 4,
+      "stars": 2696,
+      "official": 0
+    },
+    {
+      "id": "CloudAI-X",
+      "name": "CloudAI-X",
+      "count": 10,
+      "stars": 2385,
+      "official": 0
+    },
+    {
+      "id": "foryourhealth111-pixel",
+      "name": "foryourhealth111-pixel",
+      "count": 1,
+      "stars": 2279,
+      "official": 0
+    },
+    {
+      "id": "supabase",
+      "name": "supabase",
+      "count": 2,
+      "stars": 2231,
+      "official": 2
+    },
+    {
+      "id": "mcollina",
+      "name": "mcollina",
+      "count": 11,
+      "stars": 1835,
+      "official": 0
+    },
+    {
+      "id": "cloudflare",
+      "name": "cloudflare",
+      "count": 9,
+      "stars": 1759,
+      "official": 9
+    },
+    {
+      "id": "stripe",
+      "name": "stripe",
+      "count": 3,
+      "stars": 1603,
+      "official": 3
+    },
+    {
+      "id": "Eronred",
+      "name": "Eronred",
+      "count": 40,
+      "stars": 1482,
+      "official": 0
+    },
+    {
+      "id": "truongduy2611",
+      "name": "truongduy2611",
+      "count": 1,
+      "stars": 1240,
+      "official": 0
+    },
+    {
+      "id": "BehiSecc",
+      "name": "BehiSecc",
+      "count": 1,
+      "stars": 944,
+      "official": 0
+    },
+    {
+      "id": "huifer",
+      "name": "huifer",
+      "count": 19,
+      "stars": 876,
+      "official": 0
+    },
+    {
+      "id": "deusyu",
+      "name": "deusyu",
+      "count": 1,
+      "stars": 766,
+      "official": 0
+    },
+    {
+      "id": "alinaqi",
+      "name": "alinaqi",
+      "count": 68,
+      "stars": 694,
+      "official": 0
+    },
+    {
+      "id": "aklofas",
+      "name": "aklofas",
+      "count": 12,
+      "stars": 530,
+      "official": 0
+    },
+    {
+      "id": "meodai",
+      "name": "meodai",
+      "count": 1,
+      "stars": 486,
+      "official": 0
+    },
+    {
+      "id": "komal-SkyNET",
+      "name": "komal-SkyNET",
+      "count": 1,
+      "stars": 424,
+      "official": 0
+    },
+    {
+      "id": "lawvable",
+      "name": "lawvable",
+      "count": 42,
+      "stars": 415,
+      "official": 0
+    },
+    {
+      "id": "makenotion",
+      "name": "makenotion",
+      "count": 8,
+      "stars": 412,
+      "official": 8
+    },
+    {
+      "id": "zscole",
+      "name": "zscole",
+      "count": 1,
+      "stars": 339,
+      "official": 0
+    },
+    {
+      "id": "Charlie85270",
+      "name": "Charlie85270",
+      "count": 1,
+      "stars": 303,
+      "official": 0
+    },
+    {
+      "id": "gitroomhq",
+      "name": "gitroomhq",
+      "count": 1,
+      "stars": 289,
+      "official": 0
+    },
+    {
+      "id": "testdino-hq",
+      "name": "testdino-hq",
+      "count": 1,
+      "stars": 276,
+      "official": 1
+    },
+    {
+      "id": "bitwize-music-studio",
+      "name": "bitwize-music-studio",
+      "count": 53,
+      "stars": 251,
+      "official": 0
+    },
+    {
+      "id": "EveryInc",
+      "name": "EveryInc",
+      "count": 1,
+      "stars": 250,
+      "official": 0
+    },
+    {
+      "id": "CosmoBlk",
+      "name": "CosmoBlk",
+      "count": 1,
+      "stars": 213,
+      "official": 0
+    },
+    {
+      "id": "indranilbanerjee",
+      "name": "indranilbanerjee",
+      "count": 154,
+      "stars": 136,
+      "official": 0
+    },
+    {
+      "id": "gokapso",
+      "name": "gokapso",
+      "count": 3,
+      "stars": 129,
+      "official": 0
+    },
+    {
+      "id": "degausai",
+      "name": "degausai",
+      "count": 1,
+      "stars": 124,
+      "official": 0
+    },
+    {
+      "id": "talkstream",
+      "name": "talkstream",
+      "count": 1,
+      "stars": 113,
+      "official": 0
+    },
+    {
+      "id": "coderabbitai",
+      "name": "coderabbitai",
+      "count": 2,
+      "stars": 112,
+      "official": 2
+    },
+    {
+      "id": "wrsmith108",
+      "name": "wrsmith108",
+      "count": 1,
+      "stars": 110,
+      "official": 0
+    },
+    {
+      "id": "Digidai",
+      "name": "Digidai",
+      "count": 1,
+      "stars": 105,
+      "official": 0
+    },
+    {
+      "id": "Kevin7Qi",
+      "name": "Kevin7Qi",
+      "count": 1,
+      "stars": 84,
+      "official": 0
+    },
+    {
+      "id": "omkamal",
+      "name": "omkamal",
+      "count": 1,
+      "stars": 84,
+      "official": 0
+    },
+    {
+      "id": "uucz",
+      "name": "uucz",
+      "count": 7,
+      "stars": 57,
+      "official": 0
+    },
+    {
+      "id": "MohamedAbdallah-14",
+      "name": "MohamedAbdallah-14",
+      "count": 6,
+      "stars": 57,
+      "official": 0
+    },
+    {
+      "id": "k-kolomeitsev",
+      "name": "k-kolomeitsev",
+      "count": 1,
+      "stars": 52,
+      "official": 0
+    },
+    {
+      "id": "robzolkos",
+      "name": "robzolkos",
+      "count": 1,
+      "stars": 52,
+      "official": 0
+    },
+    {
+      "id": "SHADOWPR0",
+      "name": "SHADOWPR0",
+      "count": 2,
+      "stars": 43,
+      "official": 0
+    },
+    {
+      "id": "HeshamFS",
+      "name": "HeshamFS",
+      "count": 23,
+      "stars": 41,
+      "official": 0
+    },
+    {
+      "id": "muthuishere",
+      "name": "muthuishere",
+      "count": 1,
+      "stars": 39,
+      "official": 0
+    },
+    {
+      "id": "takechanman1228",
+      "name": "takechanman1228",
+      "count": 1,
+      "stars": 36,
+      "official": 0
+    },
+    {
+      "id": "honeydew-ai",
+      "name": "honeydew-ai",
+      "count": 12,
+      "stars": 35,
+      "official": 12
+    },
+    {
+      "id": "frmoretto",
+      "name": "frmoretto",
+      "count": 1,
+      "stars": 30,
+      "official": 0
+    },
+    {
+      "id": "cypress-io",
+      "name": "cypress-io",
+      "count": 3,
+      "stars": 27,
+      "official": 3
+    },
+    {
+      "id": "more-io",
+      "name": "more-io",
+      "count": 1,
+      "stars": 24,
+      "official": 0
+    },
+    {
+      "id": "awrshift",
+      "name": "awrshift",
+      "count": 1,
+      "stars": 21,
+      "official": 0
+    },
+    {
+      "id": "metalbear-co",
+      "name": "metalbear-co",
+      "count": 6,
+      "stars": 20,
+      "official": 6
+    },
+    {
+      "id": "ethos-link",
+      "name": "ethos-link",
+      "count": 1,
+      "stars": 16,
+      "official": 0
+    },
+    {
+      "id": "dembrandt",
+      "name": "dembrandt",
+      "count": 32,
+      "stars": 14,
+      "official": 0
+    },
+    {
+      "id": "trycourier",
+      "name": "trycourier",
+      "count": 1,
+      "stars": 9,
+      "official": 1
+    }
+  ],
+  "generated_at": "2026-09-23T20:02:26Z"
+}

@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "buildCommand": "yarn build --locale en",
+  "outputDirectory": "build",
+  "installCommand": "yarn install --frozen-lockfile"
+}
