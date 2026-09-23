@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect, useCallback, startTransition } from "react";
+import clsx from "clsx";
 
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -204,9 +205,11 @@ export function useClearFilters() {
 
 interface SearchBarProps {
   beforeSearch?: (value: string | null) => boolean | void;
+  /** Center the bar (hero). Default keeps end-aligned for filter headers. */
+  centered?: boolean;
 }
 
-function SearchBar({ beforeSearch }: SearchBarProps) {
+function SearchBar({ beforeSearch, centered = false }: SearchBarProps) {
   const history = useHistory();
   const location = useLocation<UserState>();
   const [value, setValue] = useState<string | null>(null);
@@ -272,7 +275,7 @@ function SearchBar({ beforeSearch }: SearchBarProps) {
   };
 
   return (
-    <div className={styles.searchInput}>
+    <div className={clsx(styles.searchInput, centered && styles.searchInputCentered)}>
       <Input
         ref={inputRef}
         id="searchbar"

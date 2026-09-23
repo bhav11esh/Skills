@@ -15,7 +15,6 @@ import { useHistory } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Translate, { translate } from "@docusaurus/Translate";
 import { voteLoginRequiredText, voteAlreadyVotedText, voteSuccessText, voteFailedText } from "@site/src/utils/voteMessages";
-import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
 
 import { App, Button, Typography, Flex, Row, Col, Card, Tooltip } from "antd";
@@ -45,7 +44,7 @@ import PromptCard from "@site/src/components/PromptCard";
 import { useFavorite } from "@site/src/hooks/useFavorite";
 import { PromptCardSkeleton } from "@site/src/components/PromptCardSkeleton";
 import { lazyWithRetry, lazyOptional } from "@site/src/utils/lazyRetry";
-import { CatalogModeSwitch } from "@site/src/components/skills/CatalogModeSwitch";
+import { CatalogShell } from "@site/src/components/catalog/CatalogShell";
 
 const PromptDetailModal = lazyWithRetry(() => import("@site/src/components/PromptDetailModal").then((m) => ({ default: m.PromptDetailModal })));
 const ShareButtons = lazyOptional(() => import("@site/src/components/ShareButtons"));
@@ -57,36 +56,47 @@ const { Title, Paragraph } = Typography;
 // ==================== 页面头部组件 ====================
 const ShowcaseHeader: React.FC = () => (
   <section className={clsx("text--center", styles.heroSection)}>
-    <CatalogModeSwitch active="prompts" />
-    <div className="hideOnSmallScreen">
+    <div>
       {/* inline style 必须，因为 antd 的 h1.ant-typography 选择器特异性 0,1,1 会赢过纯类 */}
       <Title
         level={1}
         style={{
-          fontSize: 40,
-          fontWeight: 300,
+          fontFamily: "var(--cat-font-display)",
+          fontSize: "clamp(2.25rem, 5vw, 3rem)",
+          fontWeight: 600,
           letterSpacing: "-0.04em",
           lineHeight: 1.05,
-          marginBottom: 8,
-          color: "var(--ifm-color-content)",
+          marginBottom: 10,
+          color: "var(--cat-text, var(--ifm-color-content))",
         }}>
-        AI Short
+        AiShort
       </Title>
-      <p style={{ fontSize: 18, maxWidth: 560, margin: "0 auto 4px", lineHeight: 1.55, color: "var(--ifm-color-content-secondary)" }}>{SLOGAN}</p>
+      <p
+        style={{
+          fontSize: 18,
+          maxWidth: 560,
+          margin: "0 auto 8px",
+          lineHeight: 1.55,
+          color: "var(--cat-muted, var(--ifm-color-content-secondary))",
+        }}>
+        {SLOGAN}
+      </p>
       <div
         aria-label="Supported AI tools"
         style={{
           fontSize: 13,
-          color: "var(--site-color-text-tertiary)",
+          color: "var(--cat-muted, var(--site-color-text-tertiary))",
           letterSpacing: "0.04em",
           marginBottom: 20,
           fontFamily: "var(--site-font-mono)",
         }}>
-        {/* All locales follow the minimal '{tools} <native etc>' pattern — no 'Works with' prefix */}
         <Translate id="hero.supportedAiTools" values={{ tools: SUPPORTED_AI_TOOLS.join(" · ") }}>
           {"{tools} 等"}
         </Translate>
       </div>
+    </div>
+    <div style={{ width: "100%", maxWidth: 560, margin: "0 auto 16px" }}>
+      <SearchBar centered />
     </div>
     <UserStatus />
   </section>
@@ -420,14 +430,13 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
         <>
           {/* Favorites Section - 仅当有收藏时显示 */}
           {favoritePrompts.length > 0 ? (
-            <div id="favorites-section" className={styles.showcaseFavorite}>
+            <div id="featured" className={styles.showcaseFavorite}>
               <div className="container">
                 <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                  <Title level={3} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10 }}>
+                  <Title level={3} className="hideOnSmallScreen" style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", display: "inline-flex", alignItems: "center", gap: 10, fontFamily: "var(--cat-font-display)" }}>
                     <HeartFilled aria-hidden style={{ color: "var(--site-color-svg-icon-favorite)", fontSize: 18 }} />
-                    Favorites
+                    Featured
                   </Title>
-                  <SearchBar />
                 </div>
                 <Row gutter={[16, 16]}>
                   {favoritePrompts.map((user) => (
@@ -446,17 +455,11 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
                 </Row>
               </div>
             </div>
-          ) : (
-            <div className="container">
-              <div className={clsx("margin-bottom--md", styles.showcaseFavoriteHeader)}>
-                <SearchBar />
-              </div>
-            </div>
-          )}
-          <div className="container margin-top--md">
+          ) : null}
+          <div id="browse" className="container margin-top--md">
             <div className="hideOnSmallScreen" style={{ paddingBottom: 12, marginBottom: 16, borderBottom: "1px solid var(--site-color-hairline)" }}>
-              <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em" }}>
-                All Prompts
+              <Title level={2} style={{ margin: 0, fontSize: 22, fontWeight: 600, letterSpacing: "-0.02em", fontFamily: "var(--cat-font-display)" }}>
+                Browse
               </Title>
             </div>
             <Row gutter={[16, 16]}>
@@ -556,7 +559,9 @@ const ShowcaseCards: React.FC<ShowcaseCardsProps> = React.memo(({ onOpenModal, d
 const ExploreView: React.FC<HomeData & { onOpenModal: (data: any) => void }> = ({ onOpenModal, defaultFavorData, defaultOtherData }) => {
   return (
     <>
-      <ShowcaseFilters />
+      <div id="browse-filters">
+        <ShowcaseFilters />
+      </div>
       <ShowcaseCards onOpenModal={onOpenModal} defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
     </>
   );
@@ -907,7 +912,7 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
   };
 
   return (
-    <Layout title={TITLE} description={DESCRIPTION}>
+    <CatalogShell mode="prompts" title={TITLE} description={DESCRIPTION}>
       <Head>
         {/* X 官方文档（2026 仍生效）说 twitter: 标签与 og: 「类似但不完全相同」，建议同时提供；fallback 到 og: 不应作唯一方案 */}
         <meta name="twitter:title" content={TITLE} />
@@ -916,12 +921,12 @@ export default function HomePage({ defaultFavorData, defaultOtherData }: HomeDat
         <link rel="llms-txt" href="/llms.txt" />
         <script type="application/ld+json">{toJsonLd(websiteSchema)}</script>
       </Head>
-      <main className="margin-vert--md">
+      <main>
         <ShowcaseContent defaultFavorData={defaultFavorData} defaultOtherData={defaultOtherData} />
         <Suspense fallback={null}>
           <ShareButtons shareUrl={shareUrl} title={TITLE} popOver={false} />
         </Suspense>
       </main>
-    </Layout>
+    </CatalogShell>
   );
 }

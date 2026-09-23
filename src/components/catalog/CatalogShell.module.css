@@ -1,0 +1,19 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--cat-bg);
+  background-image: var(--cat-hero-glow), var(--cat-noise);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 480px, 180px 180px;
+  color: var(--cat-text);
+  font-family: var(--cat-font-body);
+}
+
+.body {
+  flex: 1;
+  width: 100%;
+  max-width: var(--cat-max);
+  margin: 0 auto;
+  padding: 0 20px 48px;
+}

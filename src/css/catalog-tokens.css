@@ -1,0 +1,38 @@
+/**
+ * Catalog chrome design tokens — inspired by skills.rest IA, AiShort brand.
+ * Teal accent aligns with existing site primary; display/body fonts are catalog-specific.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Figtree:wght@400;500;600;700&display=swap");
+
+:root {
+  --cat-font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --cat-font-body: "Figtree", "Segoe UI", sans-serif;
+  --cat-radius: 12px;
+  --cat-radius-pill: 999px;
+  --cat-max: 1120px;
+  --cat-accent: #2d6454;
+  --cat-accent-soft: hsl(163deg 38% 92%);
+  --cat-bg: #f0f1ea;
+  --cat-surface: #f8f9f3;
+  --cat-elevated: #ffffff;
+  --cat-text: #1c1e1d;
+  --cat-muted: rgba(0, 0, 0, 0.56);
+  --cat-hairline: rgba(0, 0, 0, 0.1);
+  --cat-bar-bg: color-mix(in srgb, var(--cat-surface) 88%, transparent);
+  --cat-hero-glow: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(163deg 40% 70% / 0.28), transparent 55%);
+  --cat-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] {
+  --cat-accent: #57c2a3;
+  --cat-accent-soft: hsl(163deg 30% 18%);
+  --cat-bg: #121413;
+  --cat-surface: #1a1c1b;
+  --cat-elevated: #222524;
+  --cat-text: #eceee9;
+  --cat-muted: rgba(255, 255, 255, 0.55);
+  --cat-hairline: rgba(255, 255, 255, 0.12);
+  --cat-bar-bg: color-mix(in srgb, var(--cat-surface) 90%, transparent);
+  --cat-hero-glow: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(163deg 40% 35% / 0.35), transparent 55%);
+}

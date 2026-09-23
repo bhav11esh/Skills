@@ -16,14 +16,30 @@
   transition: width 0.2s var(--site-motion-emphasized);
 }
 
+/* Hero / centered layouts — equal margins so the bar sits in the middle */
+.searchInputCentered {
+  margin-inline: auto;
+  width: min(100%, 520px);
+}
+
+.searchInputCentered:focus-within {
+  width: min(100%, 560px);
+}
+
 .searchInput:focus-within {
   width: 420px;
 }
 
+.searchInputCentered.searchInput:focus-within {
+  width: min(100%, 560px);
+}
+
 @media (max-width: 767px) {
   .searchInput,
-  .searchInput:focus-within {
-    margin-inline-start: 0;
+  .searchInput:focus-within,
+  .searchInputCentered,
+  .searchInputCentered:focus-within {
+    margin-inline: 0;
     width: 100%;
   }
 }
