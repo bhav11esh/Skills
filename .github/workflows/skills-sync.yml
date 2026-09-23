@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Needed so the bot can push commits back to this repo
           token: ${{ secrets.GITHUB_TOKEN }}
